@@ -2,10 +2,9 @@
 
 .experience {
   height: 100vh;
-  overflow-x: hidden;
   @include heading(2);
   h1 {
-    margin-left: 4em;
+    margin: 4em 0 0 4em;
   }
 
   article {
