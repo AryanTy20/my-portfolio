@@ -37,7 +37,12 @@ const Navbar = () => {
             if (i < menu.length - 1) {
               return (
                 <li key={i}>
-                  <a href={`#${item.toLowerCase()}`}>{item}</a>
+                  <a
+                    href={`#${item.toLowerCase()}`}
+                    onClick={() => openMenu && setOpenMenu(false)}
+                  >
+                    {item}
+                  </a>
                 </li>
               );
             } else {
