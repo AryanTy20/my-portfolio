@@ -1,4 +1,4 @@
-@import "../../scss/__mixins.scss";
+@use "../../scss" as *;
 
 .aboutme {
   height: minmax(100vh, fit-content);

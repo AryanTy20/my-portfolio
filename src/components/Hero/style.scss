@@ -1,4 +1,4 @@
-@import "../../scss/__button.scss";
+@use "../../scss" as *;
 
 .hero {
   height: 100vh;

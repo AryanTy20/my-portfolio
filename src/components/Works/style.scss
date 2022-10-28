@@ -1,7 +1,4 @@
-@import "../../scss/__mixins.scss";
-@import "../../scss/__items.scss";
-@import "../../scss/__button.scss";
-@import "../.././scss/__icons.scss";
+@use "../../scss" as *;
 
 .works {
   height: fit-content;

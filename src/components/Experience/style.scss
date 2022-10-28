@@ -1,4 +1,4 @@
-@import "../../scss/__mixins.scss";
+@use "../../scss" as *;
 
 .experience {
   height: 100vh;

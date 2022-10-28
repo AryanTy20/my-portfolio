@@ -1,4 +1,4 @@
-@import "../../scss/__button.scss";
+@use "../../scss" as *;
 
 .contact {
   margin: 10em 0;
