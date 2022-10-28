@@ -3,7 +3,7 @@ import "./style.scss";
 
 const Hero = () => {
   return (
-    <section className="hero">
+    <section className="hero" id="main">
       <h1>Hi, my name is </h1>
       <h2>Aryan Tirkey.</h2>
       <h3>I'm Fullstack Web Developer.</h3>

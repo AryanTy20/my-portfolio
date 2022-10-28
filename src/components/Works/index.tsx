@@ -9,7 +9,7 @@ import "./style.scss";
 
 const Works = () => {
   return (
-    <section className="works">
+    <section className="works" id="works">
       <h1>Some Things I've Built</h1>
       <div className="projects">
         <article className="item">
