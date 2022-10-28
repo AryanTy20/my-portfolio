@@ -37,7 +37,7 @@ const Navbar = () => {
             if (i < menu.length - 1) {
               return (
                 <li key={i}>
-                  <a href="#">{item}</a>
+                  <a href={`#${item.toLowerCase()}`}>{item}</a>
                 </li>
               );
             } else {
