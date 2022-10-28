@@ -91,6 +91,7 @@ body {
   background-color: var(--bg);
   color: var(--dark-blue);
   padding: 0 4em;
+  user-select: none;
   -webkit-font-smoothing: antialiased;
 }
 
