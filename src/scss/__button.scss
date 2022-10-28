@@ -1,0 +1,14 @@
+@mixin button {
+  background-color: transparent;
+  border: solid 1px var(--accent);
+  color: var(--accent);
+  font-size: 0.8rem;
+  padding: 0.6em 1em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  transition: background-color var(--transtion-time);
+
+  &:hover {
+    background-color: var(--tint);
+  }
+}

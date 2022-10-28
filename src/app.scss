@@ -1,0 +1,131 @@
+:root {
+  --bg: #0a192f;
+  --accent: #64ffda;
+  --tint: #123040;
+  --light-blue: #ccd6f6;
+  --dark-blue: #8892b0;
+  --mid-blue: #112240;
+  --transtion-time: 0.3s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
+}
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+@font-face {
+  font-family: secondaryFont;
+  src: url("./assets/Fonts/SFMono-Regular.otf");
+}
+@font-face {
+  font-family: primaryFontB;
+  src: url("./assets/Fonts/Calibri\ Bold.TTF");
+}
+@font-face {
+  font-family: primaryFont;
+  src: url("./assets/Fonts/Calibri\ Regular.ttf");
+}
+
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+
+:focus {
+  outline: dashed 1px lightblue;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+:focus-visible {
+  outline: dashed 1px lightblue;
+}
+
+body {
+  min-width: 300px;
+  font-family: secondaryFont, serif;
+  line-height: 1.5;
+  background-color: var(--bg);
+  color: var(--dark-blue);
+  padding: 0 4em;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  padding: 2em 6em;
+}
+
+@media screen and (max-width: 769px) {
+  body {
+    padding: 0 1em;
+  }
+  main {
+    padding: 0 !important;
+  }
+}
+
+@media screen and (min-width: 770px) and (max-width: 1200px) {
+  body {
+    padding: 0 2em;
+  }
+  main {
+    padding: 2em 4em;
+  }
+}
+
+// @media screen and (max-width:769px) {
+// }
+// @media screen and (min-width: 770px) and (max-width: 1200px) {
+// }
+
+.test {
+  margin-top: 10em;
+  margin-inline: auto;
+  border: solid red 1px;
+  height: 30em;
+  width: 32em;
+  position: relative;
+}

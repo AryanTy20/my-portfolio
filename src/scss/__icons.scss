@@ -1,0 +1,11 @@
+@mixin icons {
+  display: block;
+  color: var(--dark-blue);
+  font-size: 1.2rem;
+  transition: all var(--transtion-time);
+
+  &:hover {
+    color: var(--accent);
+    transform: translateY(-5px);
+  }
+}

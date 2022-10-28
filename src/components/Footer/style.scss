@@ -1,0 +1,97 @@
+@import "../../scss/__icons.scss";
+
+.footer {
+  h1 {
+    text-align: center;
+    span {
+      color: var(--accent);
+    }
+  }
+
+  .email {
+    position: fixed;
+    bottom: 12em;
+    right: -1em;
+    transform: rotate(90deg);
+    a {
+      color: var(--dark-blue);
+      text-transform: lowercase;
+      display: block;
+      transition: all var(--transtion-time);
+
+      &:hover {
+        color: var(--accent);
+        transform: translateX(-10px);
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 140%;
+      top: 50%;
+      transform: translateX(-50%);
+      height: 50%;
+      width: 6em;
+      border-top: solid 1px var(--dark-blue);
+    }
+  }
+
+  .socials {
+    position: fixed;
+    left: 4em;
+    bottom: 8em;
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 50%;
+      top: 120%;
+      height: 70%;
+      width: 100%;
+      border-left: solid 1px var(--dark-blue);
+    }
+
+    a {
+      @include icons();
+      &:not(:first-child) {
+        margin-top: 1.6em;
+      }
+      &.mail {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .footer {
+    width: fit-content;
+    margin-inline: auto;
+    .socials {
+      position: relative;
+      left: 0;
+      bottom: 5em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &::after {
+        display: none;
+      }
+
+      a {
+        margin: 0 !important;
+
+        &.mail {
+          display: block !important;
+        }
+      }
+    }
+    .email {
+      display: none;
+    }
+  }
+}
+// @media screen and (min-width: 770px) and (max-width: 1200px) {
+// }

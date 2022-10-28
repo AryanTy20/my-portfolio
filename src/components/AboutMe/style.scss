@@ -1,0 +1,129 @@
+@import "../../scss/__mixins.scss";
+
+.aboutme {
+  height: minmax(100vh, fit-content);
+  @include heading(1);
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    .meta {
+      flex: 2;
+      p {
+        font-family: primaryFont;
+        font-size: 1.25rem;
+        line-height: 26px;
+      }
+
+      h2 {
+        font-family: primaryFont;
+        margin: 1em 0;
+        font-size: 1.3rem;
+      }
+
+      .skills {
+        display: grid;
+        grid-template: auto / repeat(2, 1fr);
+        gap: 0.5em;
+        padding: 0 0 0 1em;
+
+        li {
+          position: relative;
+          &::before {
+            position: absolute;
+            content: "▹";
+            right: 0.8em;
+            height: 100%;
+            width: 100%;
+            color: var(--accent);
+          }
+        }
+      }
+    }
+
+    .profile {
+      flex: 1.35;
+
+      .img-container {
+        position: relative;
+        left: 50%;
+        transform: translateX(-60%);
+        border-radius: 0.25em;
+        isolation: isolate;
+        height: 18em;
+        width: 18em;
+
+        img {
+          border-radius: 0.25em;
+          height: 100%;
+        }
+        &::before {
+          position: absolute;
+          content: "";
+          inset: 0;
+          height: 100%;
+          width: 100%;
+          border-radius: 0.25em;
+          background-color: rgba(#64ffda, 0.6);
+          transition: all ease 0.3s;
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          left: 8%;
+          top: 8%;
+          height: 100%;
+          width: 100%;
+          border: solid 2px var(--accent);
+          border-radius: 0.25em;
+          z-index: -1;
+          transition: all ease 0.3s;
+        }
+
+        &:hover::after {
+          left: 6%;
+          top: 6%;
+        }
+
+        &:hover::before {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .aboutme {
+    h1 {
+      font-size: 1.6rem;
+      padding-left: 1.5em;
+
+      &::before {
+        top: 60%;
+      }
+    }
+
+    .container {
+      flex-direction: column;
+
+      .meta {
+        p {
+          font-size: 1.1rem;
+        }
+
+        .skills {
+          li {
+            font-size: 0.85rem;
+          }
+        }
+      }
+
+      .profile {
+        margin: 2em 0;
+      }
+    }
+  }
+}
+@media screen and (min-width: 770px) and (max-width: 1200px) {
+}

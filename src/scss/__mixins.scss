@@ -1,0 +1,36 @@
+@mixin heading($id) {
+  h1 {
+    font-family: primaryFont;
+    position: relative;
+    font-weight: 600;
+    color: var(--light-blue);
+    font-size: 2rem;
+    padding-left: 1.4em;
+    margin-bottom: 1em;
+    width: fit-content;
+
+    &::before {
+      position: absolute;
+      content: "0" + $id + ".";
+      left: 0;
+      top: 70%;
+      transform: translateY(-50%);
+      height: 100%;
+      width: fit-content;
+      font-family: secondaryFont;
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 110%;
+      transform: translateY(-50%);
+      height: 1px;
+      width: clamp(5em, 2em + 15vw, 30em);
+      border-top: solid 1px #233554;
+    }
+  }
+}
