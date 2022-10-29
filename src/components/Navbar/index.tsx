@@ -22,7 +22,9 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="logo">AT</div>
+      <div className="logo">
+        <img src="/logo.svg" alt="" />
+      </div>
       <div ref={menuRef} className="menubox">
         <div
           className={`ham ${openMenu ? "ham-open" : ""}`}

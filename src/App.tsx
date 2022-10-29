@@ -6,21 +6,23 @@ import {
   Works,
   Contact,
   Footer,
+  Loader,
 } from "./components";
 import LazyImg from "./components/LazyImg";
 
 function App() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <main>
-        <Hero />
+        {/* <Hero />
         <AboutMe />
         <Experience />
         <Works />
         <Contact />
-        <Footer />
+        <Footer /> */}
       </main>
+      <Loader />
     </>
   );
 }
