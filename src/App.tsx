@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   AboutMe,
   Hero,
@@ -11,18 +12,33 @@ import {
 import LazyImg from "./components/LazyImg";
 
 function App() {
-  return (
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      setTimeout(() => setIsLoading(false), 1000);
+    });
+
+    return () => {
+      window.removeEventListener("load", () => {
+        setTimeout(() => setIsLoading(false), 2000);
+      });
+    };
+  }, []);
+
+  return isLoading ? (
+    <Loader />
+  ) : (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <main>
-        {/* <Hero />
+        <Hero />
         <AboutMe />
         <Experience />
         <Works />
         <Contact />
-        <Footer /> */}
+        <Footer />
       </main>
-      <Loader />
     </>
   );
 }
