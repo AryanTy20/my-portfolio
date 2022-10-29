@@ -3,7 +3,6 @@ import { useOutsideClickClose, useIsScrolled } from "../../Hooks";
 import "./style.scss";
 
 const menu = ["About", "Experience", "Work", "Contact", "Resume"];
-
 const Navbar = () => {
   const [openMenu, setOpenMenu] = React.useState(false);
   const menuRef = React.useRef<HTMLDivElement>(null);

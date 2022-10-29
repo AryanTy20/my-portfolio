@@ -6,11 +6,15 @@ nav {
   padding: 2em 0;
 
   .logo {
-    font-size: 2rem;
-    color: var(--accent);
     cursor: pointer;
     user-select: none;
     z-index: 99;
+    height: 2.5em;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
   }
   .menubox {
     width: 100%;
