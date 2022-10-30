@@ -36,7 +36,7 @@ const AboutMe = () => {
         </div>
         <div className="profile">
           <div className="img-container">
-            <img src={profile} alt="profile pic" />
+            <img src={profile} alt="profile pic" loading="lazy" />
           </div>
         </div>
       </article>

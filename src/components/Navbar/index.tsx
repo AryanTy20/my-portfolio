@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="logo">
-        <img src="/logo.svg" alt="" />
+        <img src="/logo.svg" alt="" loading="lazy" />
       </div>
       <div ref={menuRef} className="menubox">
         <div
