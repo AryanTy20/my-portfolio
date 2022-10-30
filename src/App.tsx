@@ -16,11 +16,11 @@ function App() {
 
   useEffect(() => {
     window.addEventListener("load", () => {
-      setTimeout(() => setIsLoading(false), 1000);
+      setTimeout(() => setIsLoading(false), 2000);
     });
 
     return () => {
-      window.removeEventListener("load", () => {
+      window.removeEventListener("DOMContentLoaded", () => {
         setTimeout(() => setIsLoading(false), 2000);
       });
     };
