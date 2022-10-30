@@ -4,10 +4,72 @@ import {
   FiFolder as FolderIcon,
 } from "react-icons/fi";
 
-import { Link } from "react-router-dom";
 import "./style.scss";
 
 const Works = () => {
+  const data = [
+    {
+      title: "Interactive Rating",
+      links: {
+        github: "https://github.com/AryanTy20/Frontend-Interactive-Rating",
+        live: "https://frontend-interactive-rating.vercel.app/",
+      },
+
+      desc: "It's a Frontend Mentor Challange , where user can rate and it will show the rating you select.",
+      tags: ["React", "Vite", "Scss"],
+    },
+    {
+      title: "Intro section drop menu",
+      links: {
+        github: "https://github.com/AryanTy20/Frontend-Intro-section-drop-menu",
+        live: "https://frontend-intro-section-drop-menu.vercel.app/",
+      },
+
+      desc: "It's a Frontend Mentor Challange , main task of this project was to build a drop down menu ",
+      tags: ["React", "Vite", "Scss"],
+    },
+    {
+      title: "Time Tracking",
+      links: {
+        github: "https://github.com/AryanTy20/frontend-time-tracking",
+        live: "https://frontend-time-tracking.vercel.app/",
+      },
+
+      desc: "It's a Frontend Mentor Challange , main objective was to build responsive and load diffrent data as per button click",
+      tags: ["React", "Vite", "Scss"],
+    },
+    {
+      title: "Todo App",
+      links: {
+        github: "https://github.com/AryanTy20/Frontend-Todo",
+        live: "https://frontend-todo-woad.vercel.app/",
+      },
+
+      desc: "It's a Frontend Mentor Challange , main objective was to build responsive layout with local storage to store theme mode , drag and drop list",
+      tags: ["React", "Vite", "Scss"],
+    },
+    {
+      title: "Static Job Listing",
+      links: {
+        github: "https://github.com/AryanTy20/frontend-static-job-listing",
+        live: "https://frontend-static-job-listing.vercel.app/",
+      },
+
+      desc: "It's a Frontend Mentor Challange , main objective was to build responsive layout with filter search as tags are selected",
+      tags: ["React", "Vite", "Scss", "local storage"],
+    },
+    {
+      title: "Education site",
+      links: {
+        github: "https://github.com/AryanTy20/Education-Challange",
+        live: "https://eduhub-ten.vercel.app/",
+      },
+
+      desc: "Main objective was to build responsive and load diffrent data as per button click",
+      tags: ["React", "Vite", "Scss"],
+    },
+  ];
+
   return (
     <section className="works" id="work">
       <h1>Some Things I've Built</h1>
@@ -95,21 +157,14 @@ const Works = () => {
             </ul>
             <div className="links">
               <a
-                href="https://github.com/AryanTy20/NetflixCloneFrontend"
+                href="https://github.com/AryanTy20/Frontend-Interactive-Comments"
                 target="_blank"
                 title="Frontend"
               >
                 <GithubIcon />
               </a>
               <a
-                href="https://github.com/AryanTy20/NetflixCloneAPI"
-                target="_blank"
-                title="Backend"
-              >
-                <GithubIcon />
-              </a>
-              <a
-                href="https://netflixclon3.netlify.app"
+                href="https://frontend-interactive-comments.vercel.app/"
                 target="_blank"
                 title="Live URL"
               >
@@ -132,7 +187,7 @@ const Works = () => {
             <div className="info">
               <p>
                 Ecommerce Landing Page is a challange of{" "}
-                <a href="https://www.frontendmentor.io/"></a> Frontend Mentor.
+                <a href="https://www.frontendmentor.io/">Frontend Mentor</a> .
                 This is the first project from where I started TypeScript in
                 react and with better accessibility
               </p>
@@ -146,14 +201,14 @@ const Works = () => {
             </ul>
             <div className="links">
               <a
-                href="https://github.com/AryanTy20/NetflixCloneFrontend"
+                href="https://github.com/AryanTy20/Frontend-Ecommerce-landing"
                 target="_blank"
                 title="Source Code"
               >
                 <GithubIcon />
               </a>
               <a
-                href="https://netflixclon3.netlify.app"
+                href="https://frontend-ecommerce-landing.vercel.app/"
                 target="_blank"
                 title="Live URL"
               >
@@ -166,174 +221,36 @@ const Works = () => {
       <div className="other-projects">
         <h2>Other Noteworthy Projects</h2>
         <div className="project">
-          <article className="item">
-            <div className="header">
-              <div className="foldericon">
-                <FolderIcon />
+          {data.map((item, i) => (
+            <article className="item" key={i}>
+              <div className="header">
+                <div className="foldericon">
+                  <FolderIcon />
+                </div>
+                <div className="external-links">
+                  {item.links.github && (
+                    <a href={item.links.github} target="_blank">
+                      <GithubIcon />
+                    </a>
+                  )}
+                  {item.links.live && (
+                    <a href={item.links.live} target="_blank">
+                      <ExternalLinkIcon />
+                    </a>
+                  )}
+                </div>
               </div>
-              <div className="external-links">
-                <a href="#" target="_blank">
-                  <GithubIcon />
-                </a>
-                <a href="#" target="_blank">
-                  <ExternalLinkIcon />
-                </a>
+              <div className="info">
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+                <ul className="tags">
+                  {item.tags.map((tag, i) => (
+                    <li key={i}>{tag}</li>
+                  ))}
+                </ul>
               </div>
-            </div>
-            <div className="info">
-              <h3>Lorem ipsum dolor sit amet.</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores adipisci odio ipsum nam facilis pariatur libero ab
-                quibusdam, fugiat distinctio?
-              </p>
-              <ul className="tags">
-                <li>React</li>
-                <li>Axios</li>
-                <li>TypeScript</li>
-              </ul>
-            </div>
-          </article>
-          <article className="item">
-            <div className="header">
-              <div className="foldericon">
-                <FolderIcon />
-              </div>
-              <div className="external-links">
-                <a href="#" target="_blank">
-                  <GithubIcon />
-                </a>
-                <a href="#" target="_blank">
-                  <ExternalLinkIcon />
-                </a>
-              </div>
-            </div>
-            <div className="info">
-              <h3>Lorem ipsum dolor sit amet.</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores adipisci odio ipsum nam facilis pariatur libero ab
-                quibusdam, fugiat distinctio?
-              </p>
-              <ul className="tags">
-                <li>React</li>
-                <li>Axios</li>
-                <li>TypeScript</li>
-              </ul>
-            </div>
-          </article>
-          <article className="item">
-            <div className="header">
-              <div className="foldericon">
-                <FolderIcon />
-              </div>
-              <div className="external-links">
-                <a href="#" target="_blank">
-                  <GithubIcon />
-                </a>
-                <a href="#" target="_blank">
-                  <ExternalLinkIcon />
-                </a>
-              </div>
-            </div>
-            <div className="info">
-              <h3>Lorem ipsum dolor sit amet.</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores adipisci odio ipsum nam facilis pariatur libero ab
-                quibusdam, fugiat distinctio?
-              </p>
-              <ul className="tags">
-                <li>React</li>
-                <li>Axios</li>
-                <li>TypeScript</li>
-              </ul>
-            </div>
-          </article>
-          <article className="item">
-            <div className="header">
-              <div className="foldericon">
-                <FolderIcon />
-              </div>
-              <div className="external-links">
-                <a href="#" target="_blank">
-                  <GithubIcon />
-                </a>
-                <a href="#" target="_blank">
-                  <ExternalLinkIcon />
-                </a>
-              </div>
-            </div>
-            <div className="info">
-              <h3>Lorem ipsum dolor sit amet.</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores adipisci odio ipsum nam facilis pariatur libero ab
-                quibusdam, fugiat distinctio?
-              </p>
-              <ul className="tags">
-                <li>React</li>
-                <li>Axios</li>
-                <li>TypeScript</li>
-              </ul>
-            </div>
-          </article>
-          <article className="item">
-            <div className="header">
-              <div className="foldericon">
-                <FolderIcon />
-              </div>
-              <div className="external-links">
-                <a href="#" target="_blank">
-                  <GithubIcon />
-                </a>
-                <a href="#" target="_blank">
-                  <ExternalLinkIcon />
-                </a>
-              </div>
-            </div>
-            <div className="info">
-              <h3>Lorem ipsum dolor sit amet.</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores adipisci odio ipsum nam facilis pariatur libero ab
-                quibusdam, fugiat distinctio?
-              </p>
-              <ul className="tags">
-                <li>React</li>
-                <li>Axios</li>
-                <li>TypeScript</li>
-              </ul>
-            </div>
-          </article>
-          <article className="item">
-            <div className="header">
-              <div className="foldericon">
-                <FolderIcon />
-              </div>
-              <div className="external-links">
-                <a href="#" target="_blank">
-                  <GithubIcon />
-                </a>
-                <a href="#" target="_blank">
-                  <ExternalLinkIcon />
-                </a>
-              </div>
-            </div>
-            <div className="info">
-              <h3>Lorem ipsum dolor sit amet.</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores adipisci odio ipsum nam facilis pariatur libero ab
-                quibusdam, fugiat distinctio?
-              </p>
-              <ul className="tags">
-                <li>React</li>
-                <li>Axios</li>
-                <li>TypeScript</li>
-              </ul>
-            </div>
-          </article>
+            </article>
+          ))}
         </div>
       </div>
       <a href="https://github.com/aryanty20">
