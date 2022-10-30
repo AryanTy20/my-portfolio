@@ -12,9 +12,9 @@ const AboutMe = () => {
             developer. My interest in web development started back in 2020 . I'm
             always passionate about how new techology works and how to build
             them. Sometimes i also like to do web scrapping and automation
-            testing to upskill my knowledge gather data. As of today I'm looking
-            for job . My main focus is to build best web apps with modern tools
-            and as per requirements .
+            testing just for fun. As of today I'm looking for job . My main
+            focus is to build best web apps with modern tools and as per
+            requirements .
           </p>
           <h2>Here are few technologies i've been working with recently.</h2>
           <ul className="skills">
