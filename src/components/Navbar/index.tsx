@@ -7,6 +7,33 @@ const Navbar = () => {
   const [openMenu, setOpenMenu] = React.useState(false);
   const menuRef = React.useRef<HTMLDivElement>(null);
   useOutsideClickClose(menuRef, () => setOpenMenu(false));
+  const navRef = React.useRef<HTMLElement>(null);
+  let lastScrollTop = 0;
+
+  const controlNavbar = () => {
+    let scrollTop = document.documentElement.scrollTop;
+    if (!navRef.current) return;
+    if (scrollTop > lastScrollTop) {
+      navRef.current.style.top = "-100%";
+    } else {
+      navRef.current.style.top = "0";
+      if (window.scrollY > 10) {
+        navRef.current.classList.add("active");
+      } else {
+        navRef.current.classList.remove("active");
+      }
+    }
+    lastScrollTop = scrollTop;
+  };
+  React.useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    window.addEventListener("touchstart", controlNavbar);
+
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+      window.removeEventListener("touchstart", controlNavbar);
+    };
+  });
 
   React.useEffect(() => {
     const body = document.querySelector("body");
@@ -20,7 +47,7 @@ const Navbar = () => {
   }, [openMenu]);
 
   return (
-    <nav>
+    <nav ref={navRef}>
       <div className="logo">
         <img src="/logo.svg" alt="" loading="lazy" />
       </div>
