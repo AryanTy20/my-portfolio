@@ -58,7 +58,8 @@
       background-color: #112240;
       border-radius: 0.25em;
       margin: 1em 0;
-      span {
+      span,
+      a {
         color: var(--accent);
       }
     }

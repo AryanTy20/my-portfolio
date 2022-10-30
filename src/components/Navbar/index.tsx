@@ -36,10 +36,11 @@ const Navbar = () => {
         <ul className={`menu ${openMenu ? "menu-open" : "menu-close"}`}>
           {menu.map((item, i) => {
             if (i < menu.length - 1) {
+              const t = item.toLowerCase();
               return (
                 <li key={i}>
                   <a
-                    href={`#${item.toLowerCase()}`}
+                    href={`#${t}`}
                     onClick={() => openMenu && setOpenMenu(false)}
                   >
                     {item}
