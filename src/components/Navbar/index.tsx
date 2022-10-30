@@ -47,7 +47,16 @@ const Navbar = () => {
                 </li>
               );
             } else {
-              return <button key={i}>{item}</button>;
+              return (
+                <a
+                  className="resume"
+                  key={i}
+                  href="https://drive.google.com/file/d/1FwHSuzBDDsySUwMQP1dot7zWtQ7ULEJC/view?usp=sharing"
+                  target={"_blank"}
+                >
+                  {item}
+                </a>
+              );
             }
           })}
         </ul>
