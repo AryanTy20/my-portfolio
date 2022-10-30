@@ -62,14 +62,6 @@ const Works = () => {
               >
                 <ExternalLinkIcon />
               </a>
-              {/* <Link to="https://github.com/AryanTy20/NetflixCloneFrontend">
-                <GithubIcon />
-              </Link>
-              <Link to="https://github.com/AryanTy20/NetflixCloneAPI">
-              </Link>
-              <Link to="">
-     
-              </Link> */}
             </div>
           </div>
         </article>
@@ -123,14 +115,6 @@ const Works = () => {
               >
                 <ExternalLinkIcon />
               </a>
-              {/* <Link to="https://github.com/AryanTy20/NetflixCloneFrontend">
-                <GithubIcon />
-              </Link>
-              <Link to="https://github.com/AryanTy20/NetflixCloneAPI">
-              </Link>
-              <Link to="">
-     
-              </Link> */}
             </div>
           </div>
         </article>
@@ -352,7 +336,9 @@ const Works = () => {
           </article>
         </div>
       </div>
-      <button className="show-more">Show More</button>
+      <a href="https://github.com/aryanty20">
+        <button className="show-more">Show More</button>
+      </a>
     </section>
   );
 };
