@@ -9,20 +9,19 @@ import {
   Footer,
   Loader,
 } from "./components";
-import LazyImg from "./components/LazyImg";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
+  const handleLoading = () => {
+    setTimeout(() => setIsLoading(false), 2000);
+  };
+
   useEffect(() => {
-    window.addEventListener("DOMContentLoaded", () => {
-      setTimeout(() => setIsLoading(false), 2000);
-    });
+    window.addEventListener("load", handleLoading);
 
     return () => {
-      window.removeEventListener("DOMContentLoaded", () => {
-        setTimeout(() => setIsLoading(false), 2000);
-      });
+      window.removeEventListener("load", handleLoading);
     };
   }, []);
 
