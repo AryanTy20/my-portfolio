@@ -15,12 +15,12 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    window.addEventListener("load", () => {
+    window.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => setIsLoading(false), 2000);
     });
 
     return () => {
-      window.removeEventListener("load", () => {
+      window.removeEventListener("DOMContentLoaded", () => {
         setTimeout(() => setIsLoading(false), 2000);
       });
     };
