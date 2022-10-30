@@ -133,15 +133,14 @@ const Works = () => {
           </div>
           <div className="meta">
             <h2>Feature Project</h2>
-            <h3>Interective Comment </h3>
+            <h3>Interactive Comment </h3>
             <div className="info">
               <p>
-                Netflix clone is a <span>Fullstack</span> Project with{" "}
-                <span>Authentication</span>,<span>File Upload</span>,
-                <span>Infinite Scroll</span>,<span>Lazy Loading</span>,
-                <span>Error Boundaries</span>. Backend is created using {""}
-                <span>NodeJS</span>,<span>Express</span>,<span>Mongodb</span>,
-                <span>Custom Error Handler</span>,<span>Joi</span>
+                It's a{" "}
+                <a href="https://www.frontendmentor.io/">Frontend Mentor</a>{" "}
+                challange . This challange was quite good as it has nested
+                components , use of local strorage.Here user can post comments,
+                edit, delete their comments.
               </p>
             </div>
             <ul className="tags">
@@ -149,11 +148,7 @@ const Works = () => {
               <li>Framer Motion</li>
               <li>Context API</li>
               <li>Local Storage</li>
-              <li>Axios Interceptor</li>
-              <li>React-Router-Dom v6</li>
-              <li>NodeJS</li>
-              <li>Express</li>
-              <li>MongoDb</li>
+              <li>Redux Toolkit</li>
             </ul>
             <div className="links">
               <a

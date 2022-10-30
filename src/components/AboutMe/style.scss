@@ -2,6 +2,7 @@
 
 .aboutme {
   height: minmax(100vh, fit-content);
+  padding-left: 3em;
   @include heading(1);
   .container {
     display: flex;
@@ -95,6 +96,7 @@
 
 @media screen and (max-width: 769px) {
   .aboutme {
+    padding: 0;
     h1 {
       font-size: 1.6rem;
       padding-left: 1.5em;
@@ -121,9 +123,51 @@
 
       .profile {
         margin: 2em 0;
+        scale: 0.8;
+        .img-container {
+          left: 50%;
+        }
       }
     }
   }
 }
 @media screen and (min-width: 770px) and (max-width: 1200px) {
+  .aboutme {
+    padding: 0;
+    h1 {
+      font-size: 1.6rem;
+      padding-left: 1.5em;
+
+      &::before {
+        top: 60%;
+      }
+
+      &:after {
+        width: 8em;
+      }
+    }
+
+    .container {
+      .meta {
+        text-align: justify;
+        p {
+          font-size: 1.1rem;
+        }
+
+        .skills {
+          li {
+            font-size: 0.85rem;
+          }
+        }
+      }
+
+      .profile {
+        margin: -4em 0 2em 0;
+        scale: 0.8;
+        .img-container {
+          left: 66%;
+        }
+      }
+    }
+  }
 }

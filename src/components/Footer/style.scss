@@ -94,5 +94,13 @@
     }
   }
 }
-// @media screen and (min-width: 770px) and (max-width: 1200px) {
-// }
+@media screen and (min-width: 770px) and (max-width: 1200px) {
+  .footer {
+    .email {
+      right: -4em;
+    }
+    .socials {
+      left: 2em;
+    }
+  }
+}
