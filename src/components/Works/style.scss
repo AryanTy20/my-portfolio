@@ -51,7 +51,6 @@
         padding: 2em;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         user-select: none;
         transition: transform ease var(--transtion-time);
 
@@ -80,6 +79,10 @@
           }
         }
         .info {
+          min-height: 10em;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
           margin-top: 2em;
 
           h3 {
@@ -226,10 +229,11 @@
     }
 
     .other-projects {
+      .item {
+        padding: 0.8em !important;
+      }
       .info {
-        h3 {
-          margin: 0 !important;
-        }
+        min-height: 12em !important;
       }
     }
   }
