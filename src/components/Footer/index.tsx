@@ -30,12 +30,16 @@ const Footer = () => {
         <a href="https://twitter.com/aryanty21" target={"_blank"}>
           <FiTwitter />
         </a>
-        <a className="mail" href="mailto:devty007@gmail.com" target={"_blank"}>
+        <a
+          className="mail"
+          href="mailto:aryantirk3y@gmail.com"
+          target={"_blank"}
+        >
           <FiMail />
         </a>
       </div>
       <div className="email">
-        <a href="mailto:devty007@gmail.com">Devty007@gmail.com</a>
+        <a href="mailto:aryantirk3y@gmail.com">aryantirk3y@gmail.com</a>
       </div>
     </section>
   );

@@ -13,7 +13,9 @@ const Hero = () => {
         Learning how things works always passionate me.
       </p>
       <h4> Got idea's or Project to work on ?</h4>
-      <button>Contact Me</button>
+      <a href="mailto:aryantirk3y@gmail.com">
+        <button>Contact Me</button>
+      </a>
     </section>
   );
 };
