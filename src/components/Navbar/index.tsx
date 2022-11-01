@@ -19,10 +19,10 @@ const Navbar = () => {
     } else {
       navRef.current.style.top = "0";
       if (window.scrollY > 10) {
-        setMenuClicked(false);
+        if (menuClicked) return;
         navRef.current.classList.add("active");
       } else {
-        if (menuClicked) return;
+        setMenuClicked(false);
         navRef.current.classList.remove("active");
       }
     }
