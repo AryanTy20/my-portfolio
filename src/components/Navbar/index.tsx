@@ -18,7 +18,6 @@ const Navbar = () => {
       setMenuClicked(false);
       navRef.current.style.top = "-100%";
     } else {
-      if (menuClicked) return;
       navRef.current.style.top = "0";
       if (window.scrollY > 10) {
         navRef.current.classList.add("active");
@@ -29,6 +28,7 @@ const Navbar = () => {
     lastScrollTop = scrollTop;
   };
   React.useEffect(() => {
+    if (menuClicked) return;
     if (!openMenu) {
       window.addEventListener("scroll", controlNavbar);
       window.addEventListener("touchstart", controlNavbar);
@@ -48,7 +48,7 @@ const Navbar = () => {
       if (!body) return;
       body.style.overflow = "initial";
     }
-  }, [openMenu]);
+  }, [openMenu, menuClicked]);
 
   return (
     <nav ref={navRef}>
