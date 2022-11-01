@@ -49,7 +49,7 @@ const Navbar = () => {
   return (
     <nav ref={navRef}>
       <div className="logo">
-        <img src="/logo.svg" alt="" loading="lazy" />
+        <img src="/logo.svg" alt="" />
       </div>
       <div ref={menuRef} className="menubox">
         <div
