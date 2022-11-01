@@ -193,6 +193,7 @@ const Works = () => {
               <li>Context API</li>
               <li>Local Storage</li>
               <li>Redux-Toolkit</li>
+              <li>TypeScript</li>
             </ul>
             <div className="links">
               <a
