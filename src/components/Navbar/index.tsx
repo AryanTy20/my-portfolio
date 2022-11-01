@@ -5,6 +5,7 @@ import "./style.scss";
 const menu = ["About", "Experience", "Work", "Contact", "Resume"];
 const Navbar = () => {
   const [openMenu, setOpenMenu] = React.useState(false);
+  const [menuClicked, setMenuClicked] = React.useState(false);
   const menuRef = React.useRef<HTMLDivElement>(null);
   useOutsideClickClose(menuRef, () => setOpenMenu(false));
   const navRef = React.useRef<HTMLElement>(null);
@@ -18,8 +19,10 @@ const Navbar = () => {
     } else {
       navRef.current.style.top = "0";
       if (window.scrollY > 10) {
+        setMenuClicked(false);
         navRef.current.classList.add("active");
       } else {
+        if (menuClicked) return;
         navRef.current.classList.remove("active");
       }
     }
@@ -66,7 +69,7 @@ const Navbar = () => {
             if (i < menu.length - 1) {
               const t = item.toLowerCase();
               return (
-                <li key={i}>
+                <li key={i} onClick={() => setMenuClicked(true)}>
                   <a
                     href={`#${t}`}
                     onClick={() => openMenu && setOpenMenu(false)}
