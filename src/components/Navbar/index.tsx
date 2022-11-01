@@ -26,9 +26,10 @@ const Navbar = () => {
     lastScrollTop = scrollTop;
   };
   React.useEffect(() => {
-    window.addEventListener("scroll", controlNavbar);
-    window.addEventListener("touchstart", controlNavbar);
-
+    if (!openMenu) {
+      window.addEventListener("scroll", controlNavbar);
+      window.addEventListener("touchstart", controlNavbar);
+    }
     return () => {
       window.removeEventListener("scroll", controlNavbar);
       window.removeEventListener("touchstart", controlNavbar);
