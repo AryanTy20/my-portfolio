@@ -50,7 +50,7 @@ const Navbar = () => {
   }, [openMenu]);
 
   React.useEffect(() => {
-    if (!navRef.current) return;
+    if (!navRef.current || !menuClicked) return;
     navRef.current.style.top = "-100%";
     const timeout = setTimeout(() => setMenuClicked(false), 3000);
     return () => {
