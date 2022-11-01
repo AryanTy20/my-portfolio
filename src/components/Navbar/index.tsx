@@ -15,7 +15,6 @@ const Navbar = () => {
     let scrollTop = document.documentElement.scrollTop;
     if (!navRef.current) return;
     if (scrollTop > lastScrollTop) {
-      setMenuClicked(false);
       navRef.current.style.top = "-100%";
     } else {
       navRef.current.style.top = "0";
@@ -48,7 +47,16 @@ const Navbar = () => {
       if (!body) return;
       body.style.overflow = "initial";
     }
-  }, [openMenu, menuClicked]);
+  }, [openMenu]);
+
+  React.useEffect(() => {
+    if (!navRef.current) return;
+    navRef.current.style.top = "-100%";
+    const timeout = setTimeout(() => setMenuClicked(false), 3000);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [menuClicked]);
 
   return (
     <nav ref={navRef}>
