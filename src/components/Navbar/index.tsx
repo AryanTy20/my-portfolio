@@ -15,14 +15,14 @@ const Navbar = () => {
     let scrollTop = document.documentElement.scrollTop;
     if (!navRef.current) return;
     if (scrollTop > lastScrollTop) {
+      setMenuClicked(false);
       navRef.current.style.top = "-100%";
     } else {
+      if (menuClicked) return;
       navRef.current.style.top = "0";
       if (window.scrollY > 10) {
-        if (menuClicked) return;
         navRef.current.classList.add("active");
       } else {
-        setMenuClicked(false);
         navRef.current.classList.remove("active");
       }
     }
