@@ -2,19 +2,19 @@ import React from "react";
 
 type intersectionProps = React.RefObject<HTMLElement>;
 
-export const useIntersectionObserver = (reference: intersectionProps) => {
+export const useIntersectionObserver = (ref: intersectionProps) => {
   const [isVisible, setIsVisible] = React.useState(false);
   React.useEffect(() => {
     const observer = new IntersectionObserver((enteries) => {
       enteries.forEach((item) => {
         if (item.isIntersecting) {
           setIsVisible(true);
+          observer.unobserve(item.target);
         }
       });
     });
-
-    return () => {};
+    ref.current && observer.observe(ref.current);
   }, []);
 
-  return [isVisible];
+  return isVisible;
 };

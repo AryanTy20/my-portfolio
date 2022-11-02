@@ -10,7 +10,8 @@ const Navbar = () => {
   useOutsideClickClose(menuRef, () => setOpenMenu(false));
   const navRef = React.useRef<HTMLElement>(null);
   let lastScrollTop = 0;
-  const isVisible = useIntersectionObserver();
+  const isVisible = useIntersectionObserver(navRef);
+  console.log(isVisible);
 
   const controlNavbar = () => {
     let scrollTop = document.documentElement.scrollTop;
@@ -60,7 +61,7 @@ const Navbar = () => {
   }, [menuClicked]);
 
   return (
-    <nav ref={navRef}>
+    <nav ref={navRef} className={isVisible ? "nav-animate" : ""}>
       <div className="logo">
         <img src="/logo.svg" alt="" />
       </div>
