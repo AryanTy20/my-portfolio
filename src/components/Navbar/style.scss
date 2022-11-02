@@ -125,8 +125,8 @@ nav {
     }
   }
   .resume {
-    animation: topEntry 1s forwards;
-    animation-delay: 800ms;
+    animation: topEntry 1s forwards !important;
+    animation-delay: 100ms !important;
   }
 }
 
