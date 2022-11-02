@@ -1,10 +1,8 @@
 import React from "react";
 
-type intersectionProps = {
-  reference: React.RefObject<HTMLElement>;
-};
+type intersectionProps = React.RefObject<HTMLElement>;
 
-const useIntersectionObserver = ({ reference }: intersectionProps) => {
+export const useIntersectionObserver = (reference: intersectionProps) => {
   const [isVisible, setIsVisible] = React.useState(false);
   React.useEffect(() => {
     const observer = new IntersectionObserver((enteries) => {
@@ -20,5 +18,3 @@ const useIntersectionObserver = ({ reference }: intersectionProps) => {
 
   return [isVisible];
 };
-
-export default useIntersectionObserver;

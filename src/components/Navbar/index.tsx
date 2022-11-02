@@ -1,5 +1,5 @@
 import React from "react";
-import { useOutsideClickClose, useIsScrolled } from "../../Hooks";
+import { useOutsideClickClose, useIntersectionObserver } from "../../Hooks";
 import "./style.scss";
 
 const menu = ["About", "Experience", "Work", "Contact", "Resume"];
@@ -10,6 +10,7 @@ const Navbar = () => {
   useOutsideClickClose(menuRef, () => setOpenMenu(false));
   const navRef = React.useRef<HTMLElement>(null);
   let lastScrollTop = 0;
+  const isVisible = useIntersectionObserver();
 
   const controlNavbar = () => {
     let scrollTop = document.documentElement.scrollTop;
