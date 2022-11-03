@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useOutsideClickClose, useIntersectionObserver } from "../../Hooks";
+import { useOutsideClickClose } from "../../Hooks";
 import "./style.scss";
 
 const menu = ["About", "Experience", "Work", "Contact", "Resume"];
@@ -11,17 +11,38 @@ const Navbar = () => {
   useOutsideClickClose(menuRef, () => setOpenMenu(false));
   const navRef = React.useRef<HTMLElement>(null);
   let lastScrollTop = 0;
-  // const isVisible = useIntersectionObserver(navRef);
   const menuVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const logoItem = {
     hidden: {
       opacity: 0,
-      x: -50,
     },
     show: {
       opacity: 1,
-      x: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.3,
+      },
+    },
+  };
+
+  const menuItem = {
+    hidden: {
+      opacity: 0,
+      y: -10,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
       },
     },
   };
@@ -72,7 +93,6 @@ const Navbar = () => {
       clearTimeout(timeout);
     };
   }, [menuClicked]);
-  // className={isVisible ? "nav-animate" : ""}
   return (
     <motion.nav
       ref={navRef}
@@ -80,9 +100,9 @@ const Navbar = () => {
       initial="hidden"
       animate="show"
     >
-      <div className="logo">
+      <motion.div className="logo" variants={logoItem}>
         <img src="/logo.svg" alt="" />
-      </div>
+      </motion.div>
       <div ref={menuRef} className="menubox">
         <div
           className={`ham ${openMenu ? "ham-open" : ""}`}
@@ -97,25 +117,30 @@ const Navbar = () => {
             if (i < menu.length - 1) {
               const t = item.toLowerCase();
               return (
-                <li key={i} onClick={() => setMenuClicked(true)}>
+                <motion.li
+                  key={i}
+                  onClick={() => setMenuClicked(true)}
+                  variants={menuItem}
+                >
                   <a
                     href={`#${t}`}
                     onClick={() => openMenu && setOpenMenu(false)}
                   >
                     {item}
                   </a>
-                </li>
+                </motion.li>
               );
             } else {
               return (
-                <a
+                <motion.a
+                  variants={menuItem}
                   className="resume"
                   key={i}
                   href="https://drive.google.com/file/d/1FwHSuzBDDsySUwMQP1dot7zWtQ7ULEJC/view?usp=sharing"
                   target={"_blank"}
                 >
                   {item}
-                </a>
+                </motion.a>
               );
             }
           })}
