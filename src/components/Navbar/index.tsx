@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { useOutsideClickClose, useIntersectionObserver } from "../../Hooks";
 import "./style.scss";
 
@@ -10,8 +11,20 @@ const Navbar = () => {
   useOutsideClickClose(menuRef, () => setOpenMenu(false));
   const navRef = React.useRef<HTMLElement>(null);
   let lastScrollTop = 0;
-  const isVisible = useIntersectionObserver(navRef);
-  console.log(isVisible);
+  // const isVisible = useIntersectionObserver(navRef);
+  const menuVariants = {
+    hidden: {
+      opacity: 0,
+      x: -50,
+    },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.8,
+      },
+    },
+  };
 
   const controlNavbar = () => {
     let scrollTop = document.documentElement.scrollTop;
@@ -59,9 +72,14 @@ const Navbar = () => {
       clearTimeout(timeout);
     };
   }, [menuClicked]);
-
+  // className={isVisible ? "nav-animate" : ""}
   return (
-    <nav ref={navRef} className={isVisible ? "nav-animate" : ""}>
+    <motion.nav
+      ref={navRef}
+      variants={menuVariants}
+      initial="hidden"
+      animate="show"
+    >
       <div className="logo">
         <img src="/logo.svg" alt="" />
       </div>
@@ -104,7 +122,7 @@ const Navbar = () => {
         </ul>
       </div>
       {openMenu && <div className="overlay"></div>}
-    </nav>
+    </motion.nav>
   );
 };
 

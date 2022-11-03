@@ -13,7 +13,6 @@ nav {
   .logo {
     cursor: pointer;
     user-select: none;
-    opacity: 0;
     z-index: 99;
     height: 2.5em;
 
@@ -37,7 +36,6 @@ nav {
     font-size: 0.9rem;
 
     li {
-      opacity: 0;
       cursor: pointer;
       position: relative;
       user-select: none;
@@ -64,7 +62,6 @@ nav {
     }
 
     .resume {
-      opacity: 0;
       @include button();
     }
   }
@@ -240,13 +237,6 @@ nav {
       width: 100%;
       backdrop-filter: blur(5px);
       z-index: 97;
-    }
-  }
-
-  .nav-animate {
-    .resume {
-      animation: fadeshow 1s forwards;
-      animation-delay: 200ms;
     }
   }
 }
