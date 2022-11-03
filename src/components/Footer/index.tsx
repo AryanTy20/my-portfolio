@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   FiGithub,
   FiInstagram,
@@ -6,11 +6,34 @@ import {
   FiTwitter,
   FiMail,
 } from "react-icons/fi";
+
+import { motion } from "framer-motion";
 import "./style.scss";
 
 const Footer = () => {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const interval = setTimeout(() => setShow(true), 2300);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
-    <section className="footer">
+    <motion.section
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: show ? 1 : 0,
+        transition: {
+          duration: 0.3,
+        },
+      }}
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="footer"
+    >
       <h1>
         Build By <span> Aryan Tirkey</span>
       </h1>
@@ -41,7 +64,7 @@ const Footer = () => {
       <div className="email">
         <a href="mailto:aryantirk3y@gmail.com">aryantirk3y@gmail.com</a>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
