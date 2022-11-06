@@ -155,7 +155,7 @@ const Works = () => {
           className="item"
         >
           <div className="poster">
-            <img src="/netflix.png" alt="" loading="lazy" />
+            <img src="/netflix.png" alt="" />
           </div>
           <div className="meta">
             <h2>Feature Project</h2>
@@ -214,7 +214,7 @@ const Works = () => {
           className="item"
         >
           <div className="poster">
-            <img src="/Interactive Comment.png" alt="" loading="lazy" />
+            <img src="/Interactive Comment.png" alt="" />
           </div>
           <div className="meta">
             <h2>Feature Project</h2>
@@ -261,11 +261,7 @@ const Works = () => {
           className="item"
         >
           <div className="poster">
-            <img
-              src="/Ecommerce Landing Page.png"
-              alt="project 3 images"
-              loading="lazy"
-            />
+            <img src="/Ecommerce Landing Page.png" alt="project 3 images" />
           </div>
           <div className="meta">
             <h2>Feature Project</h2>

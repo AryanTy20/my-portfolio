@@ -4,11 +4,10 @@
   height: 100vh;
   @include heading(2);
   h1 {
-    margin: 4em 0 0 4em;
+    margin: 0em 0 0 4em;
   }
-
   article {
-    height: 70%;
+    height: 80%;
     display: grid;
     place-items: center;
 
@@ -20,7 +19,7 @@
 
 @media screen and (max-width: 769px) {
   .experience {
-    margin: 4em 0 0 0;
+    margin: 10em 0 0 0;
     h1 {
       margin: 0;
     }
