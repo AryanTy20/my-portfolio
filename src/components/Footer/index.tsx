@@ -30,8 +30,6 @@ const Footer = () => {
           duration: 0.3,
         },
       }}
-      whileInView="visible"
-      viewport={{ once: true }}
       className="footer"
     >
       <h1>

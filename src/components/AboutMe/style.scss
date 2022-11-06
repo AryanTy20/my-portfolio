@@ -1,7 +1,8 @@
 @use "../../scss" as *;
 
 .aboutme {
-  height: minmax(100vh, fit-content);
+  scroll-snap-align: start;
+  height: 100vh;
   padding-left: 3em;
   @include heading(1);
   .container {
