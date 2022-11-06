@@ -50,9 +50,9 @@ const Hero = () => {
       <motion.h2 variants={items}>Aryan Tirkey.</motion.h2>
       <motion.h3 variants={items}>I'm Fullstack Web Developer.</motion.h3>
       <motion.p variants={items}>
-        I'm an ambitious self-taught Full Stack Developer / Freelancer with a
-        strong desire to learn new things, expanding my skillset upto date.
-        Learning how things works always passionate me.
+        An ambitious Full Stack developer with a keen interest in learning new
+        things. I'm passionate about technology, how it operates, and reverse
+        engineering.
       </motion.p>
       <motion.h4 variants={items}>Got idea's or Project to work on ?</motion.h4>
       <motion.a variants={items} href="mailto:aryantirk3y@gmail.com">

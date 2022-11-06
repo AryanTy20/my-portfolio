@@ -165,7 +165,7 @@ const Works = () => {
                 Netflix clone is a <span>Fullstack</span> Project with featuring{" "}
                 <span>Authentication</span>,<span>File Upload</span>,
                 <span>Infinite Scroll</span>,<span>Lazy Loading</span>,
-                <span>Error Boundaries</span>. Backend is created using
+                <span>Error Boundaries</span>. Backend is created using{" "}
                 <span>NodeJS</span>,<span>Express</span>,<span>Mongodb</span>,
                 <span>Custom Error Handler</span>,<span>Joi</span>
               </p>

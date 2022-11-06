@@ -28,13 +28,13 @@ const AboutMe = () => {
       <article className="container">
         <div className="meta">
           <p>
-            Hello! My name is Aryan Tirkey , I'm self-taught Fullstack web
-            developer. My interest in web development started back in 2020 . I'm
-            always passionate about how new techology works and how to build
-            them. Sometimes i also like to do web scrapping and automation
-            testing just for fun. As of today I'm looking for job . My main
-            focus is to build best web apps with modern tools and as per
-            requirements .
+            Hello! My name is Aryan Tirkey, I'm self-taught Full stack web
+            Developer. My interest in web development started back in 2020. I'm
+            Always passionate about how new technology works and how to build
+            Them. Sometimes I also like to do web scrapping and automation
+            Testing just for fun. As of today I'm looking for a job.My main
+            focus is to build better web apps with modern tools and as per
+            requirements.
           </p>
           <h2>Here are few technologies i've been working with recently.</h2>
           <ul className="skills">
