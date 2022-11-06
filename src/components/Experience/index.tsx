@@ -1,14 +1,37 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { useIntersectionObserver } from "../../Hooks";
+import { motion } from "framer-motion";
 import "./style.scss";
 
-const Works = () => {
+const Experience = () => {
+  const experienceRef = useRef(null);
+  const isVisible = useIntersectionObserver(experienceRef);
+
+  useEffect(() => {
+    console.log(isVisible);
+  }, [isVisible]);
+
   return (
-    <section className="experience" id="experience">
-      <h1>Experience</h1>
+    <motion.section
+      initial={{
+        opacity: 0,
+        y: 200,
+      }}
+      animate={{
+        opacity: isVisible ? 1 : 0,
+        y: isVisible ? 0 : 200,
+        transition: {
+          duration: 0.5,
+        },
+      }}
+      className="experience"
+      id="experience"
+    >
+      <h1 ref={experienceRef}>Experience</h1>
       <article>
         <h2>Fresher</h2>
       </article>
-    </section>
+    </motion.section>
   );
 };
-export default Works;
+export default Experience;

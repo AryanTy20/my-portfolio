@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./style.scss";
+import { motion } from "framer-motion";
+import { useIntersectionObserver } from "../../Hooks";
 
 const Contact = () => {
+  const contactRef = useRef(null);
+  const isVisible = useIntersectionObserver(contactRef);
   return (
-    <section className="contact" id="contact">
-      <h1>04. What's Next ?</h1>
+    <motion.section
+      initial={{
+        opacity: 0,
+        y: 200,
+      }}
+      animate={{
+        opacity: isVisible ? 1 : 0,
+        y: isVisible ? 0 : 200,
+        transition: {
+          duration: 0.5,
+        },
+      }}
+      className="contact"
+      id="contact"
+    >
+      <h1 ref={contactRef}>04. What's Next ?</h1>
       <h2>Get In Touch</h2>
       <p>
         I’m currently looking for any new opportunities, my inbox is always
@@ -14,7 +32,7 @@ const Contact = () => {
       <a href="mailto:aryantirk3y@gmail.com">
         <button>Say Hello</button>
       </a>
-    </section>
+    </motion.section>
   );
 };
 

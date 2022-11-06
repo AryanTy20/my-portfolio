@@ -15,6 +15,7 @@ export const useIntersectionObserver = (ref: intersectionProps) => {
         });
       },
       {
+        rootMargin: "50% 0% 0% 0%",
         threshold: 1,
       }
     );

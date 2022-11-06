@@ -1,12 +1,26 @@
+import { useEffect, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
 import {
   FiGithub as GithubIcon,
   FiExternalLink as ExternalLinkIcon,
   FiFolder as FolderIcon,
 } from "react-icons/fi";
+import { useIntersectionObserver } from "../../Hooks";
 
 import "./style.scss";
+import { useInView } from "react-intersection-observer";
 
 const Works = () => {
+  const controlOne = useAnimation();
+  const controlTwo = useAnimation();
+  const controlThree = useAnimation();
+  const controlFour = useAnimation();
+  const [refOne, inViewOne] = useInView();
+  const [refTwo, inViewTwo] = useInView();
+  const [refThree, inViewThree] = useInView();
+  const [refFour, inViewFour] = useInView();
+  const workRef = useRef(null);
+  const isVisible = useIntersectionObserver(workRef);
   const data = [
     {
       title: "Interactive Rating",
@@ -70,11 +84,76 @@ const Works = () => {
     },
   ];
 
+  const squareVariants = {
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+    hidden: { opacity: 0, y: 100 },
+  };
+  const project2Variants = {
+    visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.1 } },
+    hidden: { opacity: 0, y: 100 },
+  };
+
+  const projectItem = {
+    hidden: {
+      opacity: 0,
+      y: -10,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
+  useEffect(() => {
+    if (inViewOne) {
+      controlOne.start("visible");
+    }
+  }, [controlOne, inViewOne]);
+  useEffect(() => {
+    if (inViewTwo) {
+      controlTwo.start("visible");
+    }
+  }, [controlTwo, inViewTwo]);
+  useEffect(() => {
+    if (inViewThree) {
+      controlThree.start("visible");
+    }
+  }, [controlThree, inViewThree]);
+
+  useEffect(() => {
+    if (inViewFour) {
+      controlFour.start("visible");
+    }
+  }, [controlFour, inViewFour]);
+
   return (
-    <section className="works" id="work">
-      <h1>Some Things I've Built</h1>
-      <div className="projects">
-        <article className="item">
+    <motion.section
+      initial={{
+        opacity: 0,
+        y: 200,
+      }}
+      animate={{
+        opacity: isVisible ? 1 : 0,
+        y: isVisible ? 0 : 200,
+        transition: {
+          duration: 0.3,
+        },
+      }}
+      className="works"
+      id="work"
+    >
+      <h1 ref={workRef}>Some Things I've Built</h1>
+      <motion.div className="projects">
+        <motion.article
+          ref={refOne}
+          variants={squareVariants}
+          animate={controlOne}
+          initial="hidden"
+          className="item"
+        >
           <div className="poster">
             <img src="/netflix.png" alt="" loading="lazy" />
           </div>
@@ -126,8 +205,14 @@ const Works = () => {
               </a>
             </div>
           </div>
-        </article>
-        <article className="item">
+        </motion.article>
+        <motion.article
+          ref={refTwo}
+          variants={squareVariants}
+          animate={controlTwo}
+          initial="hidden"
+          className="item"
+        >
           <div className="poster">
             <img src="/Interactive Comment.png" alt="" loading="lazy" />
           </div>
@@ -167,8 +252,14 @@ const Works = () => {
               </a>
             </div>
           </div>
-        </article>
-        <article className="item">
+        </motion.article>
+        <motion.article
+          ref={refThree}
+          variants={squareVariants}
+          animate={controlThree}
+          initial="hidden"
+          className="item"
+        >
           <div className="poster">
             <img
               src="/Ecommerce Landing Page.png"
@@ -212,9 +303,15 @@ const Works = () => {
               </a>
             </div>
           </div>
-        </article>
-      </div>
-      <div className="other-projects">
+        </motion.article>
+      </motion.div>
+      <motion.div
+        ref={refFour}
+        variants={project2Variants}
+        animate={controlFour}
+        initial="hidden"
+        className="other-projects"
+      >
         <h2>Other Noteworthy Projects</h2>
         <div className="project">
           {data.map((item, i) => (
@@ -248,11 +345,11 @@ const Works = () => {
             </article>
           ))}
         </div>
-      </div>
+      </motion.div>
       <a href="https://github.com/aryanty20">
         <button className="show-more">Show More</button>
       </a>
-    </section>
+    </motion.section>
   );
 };
 

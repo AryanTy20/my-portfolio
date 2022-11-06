@@ -12,13 +12,13 @@ const AboutMe = () => {
     <motion.section
       initial={{
         opacity: 0,
-        y: 100,
+        y: 200,
       }}
       animate={{
         opacity: isVisible ? 1 : 0,
-        y: isVisible ? 0 : 100,
+        y: isVisible ? 0 : 200,
         transition: {
-          duration: 0.3,
+          duration: 0.5,
         },
       }}
       className="aboutme"

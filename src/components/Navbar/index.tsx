@@ -93,6 +93,11 @@ const Navbar = () => {
       clearTimeout(timeout);
     };
   }, [menuClicked]);
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <motion.nav
       ref={navRef}
