@@ -1,10 +1,30 @@
+import { useRef } from "react";
+import { motion } from "framer-motion";
 import profile from "../../assets/profile.jpg";
+import { useIntersectionObserver } from "../../Hooks";
 import "./style.scss";
 
 const AboutMe = () => {
+  const aboutRef = useRef(null);
+  const isVisible = useIntersectionObserver(aboutRef);
+
   return (
-    <section className="aboutme" id="about">
-      <h1>About Me</h1>
+    <motion.section
+      initial={{
+        opacity: 0,
+        y: 100,
+      }}
+      animate={{
+        opacity: isVisible ? 1 : 0,
+        y: isVisible ? 0 : 100,
+        transition: {
+          duration: 0.3,
+        },
+      }}
+      className="aboutme"
+      id="about"
+    >
+      <h1 ref={aboutRef}>About Me</h1>
       <article className="container">
         <div className="meta">
           <p>
@@ -40,7 +60,7 @@ const AboutMe = () => {
           </div>
         </div>
       </article>
-    </section>
+    </motion.section>
   );
 };
 
