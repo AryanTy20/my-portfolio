@@ -15,7 +15,7 @@ const Experience = () => {
       }}
       animate={{
         opacity: isVisible ? 1 : 0,
-        y: isVisible ? 20 : 200,
+        y: isVisible ? 70 : 200,
         transition: {
           duration: 0.5,
         },
