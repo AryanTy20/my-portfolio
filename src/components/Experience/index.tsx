@@ -7,10 +7,6 @@ const Experience = () => {
   const experienceRef = useRef(null);
   const isVisible = useIntersectionObserver(experienceRef);
 
-  useEffect(() => {
-    console.log(isVisible);
-  }, [isVisible]);
-
   return (
     <motion.section
       initial={{
@@ -19,7 +15,7 @@ const Experience = () => {
       }}
       animate={{
         opacity: isVisible ? 1 : 0,
-        y: isVisible ? 0 : 200,
+        y: isVisible ? 20 : 200,
         transition: {
           duration: 0.5,
         },
