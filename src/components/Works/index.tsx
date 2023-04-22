@@ -1,14 +1,13 @@
-import { useEffect, useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
+import {motion, useAnimation} from "framer-motion";
+import {useEffect, useRef} from "react";
 import {
-  FiGithub as GithubIcon,
   FiExternalLink as ExternalLinkIcon,
-  FiFolder as FolderIcon,
+  FiFolder as FolderIcon, FiGithub as GithubIcon
 } from "react-icons/fi";
-import { useIntersectionObserver } from "../../Hooks";
+import {useIntersectionObserver} from "../../Hooks";
 
+import {useInView} from "react-intersection-observer";
 import "./style.scss";
-import { useInView } from "react-intersection-observer";
 
 const Works = () => {
   const controlOne = useAnimation();
@@ -39,7 +38,7 @@ const Works = () => {
         live: "https://frontend-intro-section-drop-menu.vercel.app/",
       },
 
-      desc: "It's a Frontend Mentor Challange , main task of this project was to build a drop down menu ",
+      desc: "It's a Frontend Mentor Challange , main objective of this project was to build a drop down menu ",
       tags: ["React", "Vite", "Scss"],
     },
     {
@@ -85,12 +84,12 @@ const Works = () => {
   ];
 
   const squareVariants = {
-    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
-    hidden: { opacity: 0, y: 100 },
+    visible: {opacity: 1, y: 0, transition: {duration: 0.3}},
+    hidden: {opacity: 0, y: 100},
   };
   const project2Variants = {
-    visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.1 } },
-    hidden: { opacity: 0, y: 100 },
+    visible: {opacity: 1, y: 0, transition: {staggerChildren: 0.1}},
+    hidden: {opacity: 0, y: 100},
   };
 
   const projectItem = {

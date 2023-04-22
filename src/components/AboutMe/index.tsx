@@ -1,7 +1,7 @@
-import { useRef } from "react";
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
+import {useRef} from "react";
+import {useIntersectionObserver} from "../../Hooks";
 import profile from "../../assets/profile.jpg";
-import { useIntersectionObserver } from "../../Hooks";
 import "./style.scss";
 
 const AboutMe = () => {
@@ -39,19 +39,26 @@ const AboutMe = () => {
           <h2>Here are few technologies i've been working with recently.</h2>
           <ul className="skills">
             <li>JavaScript(ES6+)</li>
-            <li>Node.js</li>
             <li>TypeScript</li>
-            <li>React</li>
-            <li>React Vite</li>
-            <li>Scss</li>
-            <li>Framer-Motion</li>
-            <li>React-Router-Dom (v6)</li>
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>NestJs</li>
+            <li>React / Nextjs</li>
             <li>Redux Toolkit</li>
             <li>React Query</li>
-            <li>JEST</li>
-            <li>Express</li>
+            <li>ReactNative</li>
+            <li>Scss / Sass</li>
+            <li>Html 5</li>
+            <li>Css 3</li>
             <li>Mongodb</li>
+            <li>MySQL</li>
+            <li>Docker</li>
+            <li>Aws</li>
+            <li>Nginx</li>
+            <li>PM2</li>
             <li>Jsonwebtokens</li>
+            <li>Firebase</li>
+
           </ul>
         </div>
         <div className="profile">

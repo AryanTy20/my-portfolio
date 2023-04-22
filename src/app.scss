@@ -15,11 +15,14 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+
   &::-webkit-scrollbar {
     display: none;
   }
+
   scrollbar-width: none;
 }
+
 html,
 body,
 #__next {
@@ -34,12 +37,14 @@ svg {
   display: block;
   max-width: 100%;
 }
+
 input,
 button,
 textarea,
 select {
   font: inherit;
 }
+
 p,
 h1,
 h2,
@@ -49,6 +54,7 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
 #root,
 #__next {
   isolation: isolate;
@@ -58,10 +64,12 @@ h6 {
   font-family: secondaryFont;
   src: url("./assets/Fonts/SFMono-Regular.otf");
 }
+
 @font-face {
   font-family: primaryFontB;
   src: url("./assets/Fonts/Calibri\ Bold.TTF");
 }
+
 @font-face {
   font-family: primaryFont;
   src: url("./assets/Fonts/Calibri\ Regular.ttf");
@@ -70,6 +78,7 @@ h6 {
 a {
   text-decoration: none;
 }
+
 li {
   list-style: none;
 }
@@ -77,9 +86,11 @@ li {
 :focus {
   outline: dashed 1px lightblue;
 }
+
 :focus:not(:focus-visible) {
   outline: none;
 }
+
 :focus-visible {
   outline: dashed 1px lightblue;
 }
@@ -105,6 +116,7 @@ main {
   body {
     padding: 0 1em;
   }
+
   main {
     padding: 0 !important;
   }
@@ -114,13 +126,23 @@ main {
   body {
     padding: 0 2em;
   }
+
   main {
     padding: 2em 4em;
   }
 }
 
-// @media screen and (max-width:769px) {
-// }
+@media screen and (min-width:1200px) {
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  main {
+    max-width: 72vw;
+  }
+}
+
 // @media screen and (min-width: 770px) and (max-width: 1200px) {
 // }
 

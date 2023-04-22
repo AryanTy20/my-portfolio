@@ -3,9 +3,11 @@
 .experience {
   height: 100vh;
   @include heading(2);
+
   h1 {
     margin: 0em 0 0 4em;
   }
+
   article {
     height: 80%;
     display: grid;
@@ -15,11 +17,25 @@
       font-size: 12rem;
     }
   }
+
+  .exp {
+    margin: 2em 0 2em 5em;
+    width: 80%;
+
+    h3 {
+      color: var(--light-blue);
+    }
+
+    p {
+      padding-left: 2em;
+    }
+  }
 }
 
 @media screen and (max-width: 769px) {
   .experience {
-    margin: 10em 0 0 0;
+    margin: 20em 0 0 0 !important;
+
     h1 {
       margin: 0;
     }
@@ -27,13 +43,28 @@
     article {
       h2 {
         font-size: clamp(4rem, 3rem + 8vw, 6rem);
+      }
+    }
+
+    .exp {
+      margin: 1em;
+      width: 90%;
+
+      h3 {
+        color: var(--light-blue);
+      }
+
+      p {
+        padding-left: 0;
       }
     }
   }
 }
+
 @media screen and (min-width: 770px) and (max-width: 1200px) {
   .experience {
     margin: 4em 0 0 0;
+
     h1 {
       margin: 0;
     }
@@ -43,5 +74,19 @@
         font-size: clamp(4rem, 3rem + 8vw, 6rem);
       }
     }
+
+    .exp {
+      margin: 1em;
+      width: 90%;
+
+      h3 {
+        color: var(--light-blue);
+      }
+
+      p {
+        padding-left: 0;
+      }
+    }
+
   }
 }

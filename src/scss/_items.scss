@@ -3,7 +3,7 @@
 @mixin items() {
   .poster {
     flex: 1;
-    height: 28.5em;
+    height: 30em;
     overflow: hidden;
     position: relative;
     border-top-right-radius: 0.25em;
@@ -28,6 +28,7 @@
       opacity: 0;
     }
   }
+
   .meta {
     flex: 0.6;
     display: flex;
@@ -59,6 +60,7 @@
       font-family: primaryFont;
       border-radius: 0.25em;
       margin: 1em 0;
+
       span,
       a {
         color: var(--accent);
